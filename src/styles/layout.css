@@ -36,7 +36,7 @@ body {
 .hero-title:hover::before { animation: glitch1 0.3s infinite; color: var(--c-pink); z-index: -1; }
 .hero-title:hover::after { animation: glitch2 0.3s infinite; color: var(--c-cyan); z-index: -2; }
 .hero-title-text { overflow: hidden; display: flex; align-items: baseline; }
-.hero-title-text:last-child { justify-content: flex-end; }
+.hero-title-text:last-child { justify-content: flex-start; }
 .hero-title-text span { display: block; transform: translateY(110%); }
 .hero-sub {
     display: flex; justify-content: space-between; margin-top: 2rem;

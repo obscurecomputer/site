@@ -22,7 +22,7 @@ export class ObscureHero extends LitElement {
             <section class="hero container">
                 <div class="hero-title" data-text="OBSCURE COMPUTER">
                     <div class="hero-title-text"><span class="hero-text-animation">OBSCURE</span></div>
-                    <h1 class="hero-title-text" style="text-align: right;"><span class="hero-text-animation" style="color: var(--c-cyan);">COMPUTER</span></h1>
+                    <h1 class="hero-title-text"><span class="hero-text-animation" style="color: var(--c-cyan);">COMPUTER</span></h1>
                 </div>
 
                 <div class="hero-sub">
