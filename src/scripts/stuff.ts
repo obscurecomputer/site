@@ -79,21 +79,14 @@ export const projectsData = [
         name: "TWINE",
         cat: "KOTLIN",
         year: "2025",
-        link: "https://github.com/your-org/twine",
+        link: "https://github.com/obscurecomputer/twine",
         active: true
     },
     {
         name: "PIKU",
         cat: "KOTLIN",
         year: "2025",
-        link: "https://github.com/your-org/piku",
+        link: "https://github.com/obscurecomputer/piku",
         active: true
-    },
-    {
-        name: "DOT GITHUB",
-        cat: "BRAINFUCK / MAY 24 1337",
-        year: "1337",
-        link: "https://github.com/your-org/.github",
-        active: false
     }
 ];
