@@ -34,7 +34,7 @@ export const memberData = [
         bio: "does somth related to minecraft mods, idk man :pensive:",
         img: "https://avatars.githubusercontent.com/u/59340653?v=4",
         github: "https://github.com/zNotChill",
-        social: "#"
+        social: "#",
     },
     {
         name: "gibbie",
@@ -43,7 +43,7 @@ export const memberData = [
         bio: "something related to the backend, idk what. gibstein gibstein gibstein...",
         img: "https://avatars.githubusercontent.com/u/49456798?v=4",
         github: "https://github.com/gibbiemonster",
-        social: "#"
+        social: "#",
     },
     {
         name: "cerq",
@@ -52,7 +52,7 @@ export const memberData = [
         bio: "cerquantations cerquantations cerquantations...",
         img: "https://avatars.githubusercontent.com/u/66092565?v=4",
         github: "https://github.com/cerqiest",
-        social: "#"
+        social: "#",
     },
     {
         name: "unium",
@@ -61,7 +61,7 @@ export const memberData = [
         bio: "i make website",
         img: "https://avatars.githubusercontent.com/u/81354905?v=4",
         github: "https://github.com/TheUnium",
-        social: "#"
+        social: "#",
     },
     {
         name: "grcq",
@@ -70,8 +70,8 @@ export const memberData = [
         bio: "honestly i dont even have a joke, i do not know what he does...",
         img: "https://avatars.githubusercontent.com/u/66485591?v=4",
         github: "https://github.com/grcq",
-        social: "#"
-    }
+        social: "#",
+    },
 ];
 
 export const projectsData = [
@@ -80,20 +80,20 @@ export const projectsData = [
         cat: "KOTLIN",
         year: "2025",
         link: "https://github.com/your-org/twine",
-        active: true
+        active: true,
     },
     {
         name: "PIKU",
         cat: "KOTLIN",
         year: "2025",
         link: "https://github.com/your-org/piku",
-        active: true
+        active: true,
     },
     {
         name: "DOT GITHUB",
         cat: "BRAINFUCK / MAY 24 1337",
         year: "1337",
         link: "https://github.com/your-org/.github",
-        active: false
-    }
+        active: false,
+    },
 ];

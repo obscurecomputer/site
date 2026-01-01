@@ -12,7 +12,7 @@
  * limitations under the License.
  */
 
-import * as THREE from 'three';
+import * as THREE from "three";
 
 export function globe(container: HTMLElement, trigger: HTMLElement) {
     if (!container) return;
@@ -23,18 +23,24 @@ export function globe(container: HTMLElement, trigger: HTMLElement) {
 
     const renderer = new THREE.WebGLRenderer({ alpha: true, antialias: false });
     renderer.setSize(container.clientWidth, container.clientHeight);
-    renderer.setPixelRatio(0.25)
+    renderer.setPixelRatio(0.25);
     container.appendChild(renderer.domElement);
 
     const material = new THREE.MeshBasicMaterial({
         color: 0x111111,
         wireframe: true,
         transparent: true,
-        opacity: 0.9
+        opacity: 0.9,
     });
 
-    const sphereOuter = new THREE.Mesh(new THREE.IcosahedronGeometry(1.2, 0), material);
-    const sphereInner = new THREE.Mesh(new THREE.IcosahedronGeometry(0.7, 0), material);
+    const sphereOuter = new THREE.Mesh(
+        new THREE.IcosahedronGeometry(1.2, 0),
+        material
+    );
+    const sphereInner = new THREE.Mesh(
+        new THREE.IcosahedronGeometry(0.7, 0),
+        material
+    );
 
     const group = new THREE.Group();
     group.add(sphereOuter);
@@ -54,7 +60,7 @@ export function globe(container: HTMLElement, trigger: HTMLElement) {
     }
     animate();
 
-    window.addEventListener('resize', () => {
+    window.addEventListener("resize", () => {
         if (!container.clientWidth) return;
         renderer.setSize(container.clientWidth, container.clientHeight);
         camera.aspect = container.clientWidth / container.clientHeight;
@@ -62,6 +68,6 @@ export function globe(container: HTMLElement, trigger: HTMLElement) {
     });
 
     if (trigger) {
-        trigger.addEventListener('mousemove', () => mouseSpeed = 0.05);
+        trigger.addEventListener("mousemove", () => (mouseSpeed = 0.05));
     }
 }
