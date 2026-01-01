@@ -13,7 +13,17 @@
  */
 
 export const bootMessages = [
-    "SENDING 50 TRILLION TO ISRAEL"
+    "SENDING 50 TRILLION TO ISRAEL",
+    "REDACTING FILES",
+    "OVERTHROWING THE GOVERNMENT",
+    "SELLING YOUR DATA TO THE HIGHEST BIDDER",
+    "MINING CRYPTO",
+    "FORWARDING EMAILS TO THE FBI",
+    "INSTALLING WINDOWS 11",
+    "UPDATING TERMS OF SERVICE",
+    "SHARING LOCATION WITH ADVERTISERS",
+    "ADJUSTING SOCIAL CREDIT SCORE",
+    "HARVESTING YOUR COOKIES",
 ];
 
 export const memberData = [
@@ -38,7 +48,7 @@ export const memberData = [
     {
         name: "cerq",
         handle: "cerqiest",
-        role: "CLOUDFLARE STUFF",
+        role: "CRYPTOBRO OF JS FRAMEWORKS",
         bio: "cerquantations cerquantations cerquantations...",
         img: "https://avatars.githubusercontent.com/u/66092565?v=4",
         github: "https://github.com/cerqiest",
