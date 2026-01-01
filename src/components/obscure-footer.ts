@@ -62,13 +62,13 @@ export class ObscureFooter extends LitElement {
                         </div>
 
                         <div class="f-side f-right">
-                            <a href="#" class="link">
+                            <a href="https://discord.gg/gBCR8Yr8jm" class="link">
                                 <span class="bracket">[</span> DISCORD_SV <span class="bracket">]</span>
                             </a>
-                            <a href="#" class="link">
+                            <a href="https://github.com/obscurecomputer" class="link">
                                 <span class="bracket">[</span> GITHUB_ORG <span class="bracket">]</span>
                             </a>
-                            <a href="#" class="link">
+                            <a href="mailto:contact@obscure.computer" class="link">
                                 <span class="bracket">[</span> HELP_EMAIL <span class="bracket">]</span>
                             </a>
                         </div>
