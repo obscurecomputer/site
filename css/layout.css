@@ -1,0 +1,150 @@
+.hero {
+    height: 100vh; display: flex; flex-direction: column;
+    justify-content: center; position: relative;
+}
+.hero-title {
+    font-family: var(--font-display); font-size: 7vw; line-height: 1.2;
+    text-transform: uppercase; font-weight: 400; mix-blend-mode: exclusion; position: relative;
+}
+.hero-title::before, .hero-title::after {
+    content: attr(data-text); position: absolute; top: 0; left: 0;
+    width: 100%; height: 100%; opacity: 0;
+}
+.hero-title:hover::before { animation: glitch1 0.3s infinite; color: var(--c-pink); z-index: -1; }
+.hero-title:hover::after { animation: glitch2 0.3s infinite; color: var(--c-cyan); z-index: -2; }
+.hero-title-text { overflow: hidden; display: flex; }
+.hero-title-text span { display: block; transform: translateY(110%); }
+.hero-sub {
+    display: flex; justify-content: space-between; margin-top: 2rem;
+    font-size: 1.2rem; opacity: 0; border-top: 2px solid rgba(255,255,255,0.2); padding-top: 20px;
+}
+.hero-dot-thingy {
+    display: inline-block; width: 8px; height: 8px;
+    background: var(--c-cyan); margin-right: 8px; animation: statusBlink 1.5s infinite steps(2);
+}
+.scroll-indicator {
+    position: absolute; bottom: 40px; right: 4vw; font-size: 1rem;
+    text-transform: uppercase; display: flex; align-items: center; gap: 10px; opacity: 0;
+}
+.scroll-line { width: 40px; height: 2px; background: var(--c-cyan); animation: scrollPulse 2s infinite; }
+
+.about {
+    font-family: var(--font-mono); font-size: 3vw; line-height: 1.2;
+    color: var(--c-white); text-transform: uppercase; position: relative;
+}
+.highlight {
+    color: var(--c-cyan); position: relative; display: inline-block; animation: textFlicker 3s infinite;
+}
+.morse-code { position: relative; }
+.morse-code::before {
+    content: ''; position: absolute; top: -20px; left: 0; width: 100%; height: 4px;
+    background: linear-gradient(90deg, var(--c-cyan) 0px, var(--c-cyan) 4px, transparent 4px, transparent 8px, var(--c-cyan) 8px, var(--c-cyan) 12px, transparent 12px, transparent 16px, transparent 16px, transparent 40px, var(--c-cyan) 40px, var(--c-cyan) 44px, transparent 44px, transparent 48px, var(--c-cyan) 48px, var(--c-cyan) 60px, transparent 60px, transparent 64px, var(--c-cyan) 64px, var(--c-cyan) 68px, transparent 68px, transparent 72px, var(--c-cyan) 72px, var(--c-cyan) 76px, transparent 76px, transparent 80px, transparent 80px, transparent 88px, var(--c-cyan) 88px, var(--c-cyan) 100px, transparent 100px, transparent 104px, var(--c-cyan) 104px, var(--c-cyan) 116px, transparent 116px, transparent 120px, var(--c-cyan) 120px, var(--c-cyan) 132px, transparent 132px, transparent 136px, transparent 136px, transparent 144px, var(--c-cyan) 144px, var(--c-cyan) 148px, transparent 148px, transparent 152px, var(--c-cyan) 152px, var(--c-cyan) 156px, transparent 156px, transparent 160px, var(--c-cyan) 160px, var(--c-cyan) 164px, transparent 164px, transparent 168px, var(--c-cyan) 168px, var(--c-cyan) 180px, transparent 180px, transparent 184px, transparent 184px, transparent 192px, var(--c-cyan) 192px, var(--c-cyan) 196px, transparent 196px, transparent 200px, transparent 200px, transparent 224px, var(--c-cyan) 224px, var(--c-cyan) 236px, transparent 236px, transparent 240px, var(--c-cyan) 240px, var(--c-cyan) 252px, transparent 252px, transparent 256px, var(--c-cyan) 256px, var(--c-cyan) 268px, transparent 268px, transparent 272px, transparent 272px, transparent 280px, var(--c-cyan) 280px, var(--c-cyan) 292px, transparent 292px, transparent 296px, var(--c-cyan) 296px, var(--c-cyan) 300px, transparent 300px, transparent 304px, var(--c-cyan) 304px, var(--c-cyan) 308px, transparent 308px, transparent 312px, var(--c-cyan) 312px, var(--c-cyan) 316px, transparent 316px, transparent 320px, transparent 320px, transparent 328px, var(--c-cyan) 328px, var(--c-cyan) 332px, transparent 332px, transparent 336px, var(--c-cyan) 336px, var(--c-cyan) 340px, transparent 340px, transparent 344px, var(--c-cyan) 344px, var(--c-cyan) 348px, transparent 348px, transparent 352px, transparent 352px, transparent 360px, var(--c-cyan) 360px, var(--c-cyan) 372px, transparent 372px, transparent 376px, var(--c-cyan) 376px, var(--c-cyan) 380px, transparent 380px, transparent 384px, var(--c-cyan) 384px, var(--c-cyan) 396px, transparent 396px, transparent 400px, var(--c-cyan) 400px, var(--c-cyan) 404px, transparent 404px, transparent 408px, transparent 408px, transparent 416px, var(--c-cyan) 416px, var(--c-cyan) 420px, transparent 420px, transparent 424px, var(--c-cyan) 424px, var(--c-cyan) 428px, transparent 428px, transparent 432px, var(--c-cyan) 432px, var(--c-cyan) 444px, transparent 444px, transparent 448px, transparent 448px, transparent 456px, var(--c-cyan) 456px, var(--c-cyan) 460px, transparent 460px, transparent 464px, var(--c-cyan) 464px, var(--c-cyan) 476px, transparent 476px, transparent 480px, var(--c-cyan) 480px, var(--c-cyan) 484px, transparent 484px, transparent 488px, transparent 488px, transparent 496px, var(--c-cyan) 496px, var(--c-cyan) 500px, transparent 500px, transparent 504px, transparent 504px, transparent 528px, var(--c-cyan) 528px, var(--c-cyan) 532px, transparent 532px, transparent 536px, var(--c-cyan) 536px, var(--c-cyan) 540px, transparent 540px, transparent 544px, var(--c-cyan) 544px, var(--c-cyan) 556px, transparent 556px, transparent 560px, var(--c-cyan) 560px, var(--c-cyan) 564px, transparent 564px, transparent 568px, transparent 568px, transparent 576px, var(--c-cyan) 576px, var(--c-cyan) 580px, transparent 580px, transparent 584px, var(--c-cyan) 584px, var(--c-cyan) 596px, transparent 596px, transparent 600px, var(--c-cyan) 600px, var(--c-cyan) 604px, transparent 604px, transparent 608px, transparent 608px, transparent 616px, var(--c-cyan) 616px, var(--c-cyan) 620px, transparent 620px, transparent 624px, var(--c-cyan) 624px, var(--c-cyan) 628px, transparent 628px, transparent 632px, var(--c-cyan) 632px, var(--c-cyan) 644px, transparent 644px, transparent 648px, var(--c-cyan) 648px, var(--c-cyan) 652px, transparent 652px, transparent 656px, transparent 656px, transparent 664px, var(--c-cyan) 664px, var(--c-cyan) 668px, transparent 668px, transparent 672px, var(--c-cyan) 672px, var(--c-cyan) 684px, transparent 684px, transparent 688px, var(--c-cyan) 688px, var(--c-cyan) 692px, transparent 692px, transparent 696px);
+    background-size: 696px 4px; animation: borderScroll 20s linear infinite;
+}
+
+.marquee {
+    position: relative; width: 100vw; max-width: 100%; height: 20vh;
+    overflow-x: hidden; background: var(--c-white); color: var(--c-black);
+    display: flex; align-items: center; box-shadow: 0 0 20px rgba(0, 255, 208, 0.5);
+}
+.track { position: absolute; white-space: nowrap; will-change: transform; }
+.marquee-text {
+    font-family: var(--font-display); font-size: 5vw; font-weight: 400; text-transform: uppercase; margin-right: 4vw;
+}
+.divider-marquee {
+    width: 100vw; position: relative; left: 50%; right: 50%;
+    margin-left: -50vw; margin-right: -50vw; padding: 8vh 0;
+    background: var(--c-black); border-top: 1px solid #222; border-bottom: 1px solid #222;
+    overflow: hidden; display: flex; align-items: center; z-index: 5; cursor: ew-resize;
+}
+.divider-marquee::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(#111 1px, transparent 1px), linear-gradient(90deg, #111 1px, transparent 1px);
+    background-size: 20px 20px; z-index: -1; opacity: 0.5;
+}
+.divmar-track { display: flex; white-space: nowrap; will-change: transform; margin: 0; padding: 0; }
+.divmar-item {
+    font-family: var(--font-mono); font-size: 5vw; font-weight: 700; color: #1a1a1a;
+    margin-right: 2vw; text-transform: uppercase; transition: color 0.1s, text-shadow 0.1s;
+    user-select: none; line-height: 1;
+}
+.divider-marquee:hover .divmar-item { color: var(--c-white); text-shadow: 4px 4px 0px var(--c-cyan); }
+
+footer { min-height: 100vh; display: flex; flex-direction: column; justify-content: flex-end; position: relative; overflow: hidden; }
+.footer-cta {
+    font-family: var(--font-display); font-size: 8vw; line-height: 1;
+    text-transform: uppercase; text-align: center; margin-bottom: 10vh; z-index: 2; position: relative;
+}
+.footer-cta::before {
+    content: ''; position: absolute; top: -40px; left: 50%; transform: translateX(-50%);
+    width: 200px; height: 4px;
+    background: linear-gradient(90deg, transparent 0%, transparent 10%, var(--c-pink) 10%, var(--c-pink) 30%, transparent 30%, transparent 40%, var(--c-yellow) 40%, var(--c-yellow) 60%, transparent 60%, transparent 70%, var(--c-cyan) 70%, var(--c-cyan) 90%, transparent 90%, transparent 100%);
+    background-size: 100px 4px; animation: rainbowScroll 3s linear infinite;
+}
+.footer-cta a { color: var(--c-white); display: block; transition: color 0.1s steps(2); position: relative; }
+.footer-cta a:hover { color: var(--c-cyan); text-shadow: 4px 4px 0px #000; animation: textShake 0.3s infinite; }
+.real-footer {
+    width: 120vw; margin-left: -10vw; background: linear-gradient(135deg, var(--c-cyan) 0%, #00d4b8 100%);
+    color: var(--c-black); transform: rotate(-2deg); padding: 100px 10vw 80px 10vw;
+    margin-bottom: -50px; position: relative; z-index: 10; box-shadow: 0 -10px 0px rgba(0,0,0,1);
+    border-top: 4px solid #000; overflow: hidden;
+}
+.real-footer::before {
+    content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background-image: linear-gradient(0deg, transparent 24%, rgba(0,0,0,.1) 25%, rgba(0,0,0,.1) 26%, transparent 27%, transparent 74%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(0,0,0,.1) 25%, rgba(0,0,0,.1) 26%, transparent 27%, transparent 74%, rgba(0,0,0,.1) 75%, rgba(0,0,0,.1) 76%, transparent 77%, transparent);
+    background-size: 50px 50px; opacity: 0.3; pointer-events: none; animation: pixelGrid 20s linear infinite;
+}
+.footer-deco {
+    position: absolute; width: 20px; height: 20px; background: var(--c-black); opacity: 0.2;
+    animation: floatDeco 8s ease-in-out infinite;
+}
+.footer-deco:nth-child(1) { top: 20%; left: 10%; animation-delay: 0s; }
+.footer-deco:nth-child(2) { top: 60%; right: 15%; animation-delay: 2s; }
+.footer-deco:nth-child(3) { top: 40%; left: 80%; animation-delay: 4s; }
+.footer-bottom {
+    display: grid; grid-template-columns: 1fr auto 1fr; align-items: center;
+    max-width: 1600px; margin: 0 auto; position: relative; z-index: 2;
+}
+.f-side {
+    display: flex; flex-direction: column; justify-content: center; gap: 4px;
+    font-family: var(--font-mono); font-size: 1rem; z-index: 5;
+}
+.f-right { align-items: flex-end; }
+.meta-row { display: flex; align-items: center; gap: 8px; }
+.meta-label { opacity: 0.5; font-size: 0.85em; letter-spacing: 1px; }
+.meta-val { color: var(--c-black); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+.copyright-row { margin-top: 8px; padding-top: 8px; border-top: 1px dashed rgba(0,0,0,0.2); }
+.status-blink { color: var(--c-pink); animation: blink 1s steps(2) infinite; margin-right: 5px; }
+
+.f-center {
+    position: relative; width: 300px; height: 300px;
+    display: flex; justify-content: center; align-items: center; margin: 0 auto;
+}
+.f-center::before {
+    content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 240px; height: 240px; border: 2px solid var(--c-black); opacity: 0.2;
+    animation: ringPulse 3s ease-in-out infinite;
+}
+@keyframes ringPulse {
+    0%, 100% { transform: translate(-50%, -50%) scale(1); opacity: 0.2; }
+    50% { transform: translate(-50%, -50%) scale(1.1); opacity: 0.05; }
+}
+.spinny-text {
+    position: absolute; width: 100%; height: 100%; animation: rotateText 20s linear infinite; z-index: 2;
+}
+.spinny-text text {
+    font-family: var(--font-mono); font-size: 14px; fill: var(--c-off-black);
+    text-transform: uppercase; letter-spacing: 2px; font-weight: bold;
+}
+#three-container {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+    width: 220px; height: 220px; z-index: 1; pointer-events: none;
+}
+#three-container canvas { image-rendering: pixelated; }
+
+h1 { font-size: 1em; }
+h1:hover { animation: glitchAnim 0.3s infinite; color: var(--c-cyan); text-shadow: 2px 2px var(--c-pink); }
+.fcta-small { font-size: 0.5em; }
+.fcta-big { font-size: 0.8em; }
+.divider { width: 100%; height: 1px; background: linear-gradient(90deg, transparent, var(--c-white), transparent); opacity: 0.2; margin: 4rem 0; }
+.badge { display: inline-block; border: 1px solid var(--c-white); padding: 0.2rem 0.5rem; margin-bottom: 1rem; background: var(--c-off-black); color: var(--c-yellow); }
