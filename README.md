@@ -1,1 +1,0 @@
-note: some ai was used (mainly for divder thingy, i.e., .morse-code) and some bug fixing

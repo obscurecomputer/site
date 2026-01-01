@@ -1,5 +1,6 @@
-export function globe(containerId, triggerId) {
-    const container = document.getElementById(containerId);
+import * as THREE from 'three';
+
+export function globe(container: HTMLElement, trigger: HTMLElement) {
     if (!container) return;
 
     const scene = new THREE.Scene();
@@ -25,8 +26,7 @@ export function globe(containerId, triggerId) {
     group.add(sphereOuter);
     group.add(sphereInner);
     scene.add(group);
-
-    const clock = new THREE.Clock();
+    new THREE.Clock();
     let mouseSpeed = 0;
 
     function animate() {
@@ -47,7 +47,6 @@ export function globe(containerId, triggerId) {
         camera.updateProjectionMatrix();
     });
 
-    const trigger = document.getElementById(triggerId);
     if (trigger) {
         trigger.addEventListener('mousemove', () => mouseSpeed = 0.05);
     }
