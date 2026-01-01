@@ -36,8 +36,8 @@ export class ObscureFooter extends LitElement {
                     <div class="footer-bottom">
                         <div class="f-side f-left">
                             <div class="meta-row">
-                                <span class="meta-label">LOC.NET ::</span>
-                                <span class="meta-val">MUMBAI_SLUMS</span>
+                                <span class="meta-label">OBSCURE ::</span>
+                                <span class="meta-val">VERY</span>
                             </div>
                             <div class="meta-row">
                                 <span class="meta-label">IS.DOWN ::</span>
@@ -53,7 +53,7 @@ export class ObscureFooter extends LitElement {
                                 <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
                                 <text>
                                     <textPath href="#circlePath" startOffset="0%">
-                                        OBSCURE COMPUTER — SINCE 2025 — wtf how
+                                        OBSCURE COMPUTER — SINCE 2025 — 
                                     </textPath>
                                 </text>
                             </svg>
