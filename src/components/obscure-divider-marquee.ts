@@ -33,8 +33,6 @@ export class ObscureDividerMarquee extends LitElement {
                     <span class="divmar-item">::</span>
                     <span class="divmar-item">GO</span>
                     <span class="divmar-item">::</span>
-                    
-                    
                 </div>
             </div>
         `;

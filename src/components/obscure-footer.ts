@@ -63,8 +63,11 @@ export class ObscureFooter extends LitElement {
                                     fill="transparent"
                                 />
                                 <text>
-                                    <textPath href="#circlePath" startOffset="0%">
-                                        OBSCURE COMPUTER — SINCE 2025 — 
+                                    <textPath
+                                        href="#circlePath"
+                                        startOffset="0%"
+                                    >
+                                        OBSCURE COMPUTER — SINCE 2025 —
                                     </textPath>
                                 </text>
                             </svg>
@@ -73,14 +76,26 @@ export class ObscureFooter extends LitElement {
                         </div>
 
                         <div class="f-side f-right">
-                            <a href="https://discord.gg/gBCR8Yr8jm" class="link">
-                                <span class="bracket">[</span> DISCORD_SV <span class="bracket">]</span>
+                            <a
+                                href="https://discord.gg/gBCR8Yr8jm"
+                                class="link"
+                            >
+                                <span class="bracket">[</span> DISCORD_SV
+                                <span class="bracket">]</span>
                             </a>
-                            <a href="https://github.com/obscurecomputer" class="link">
-                                <span class="bracket">[</span> GITHUB_ORG <span class="bracket">]</span>
+                            <a
+                                href="https://github.com/obscurecomputer"
+                                class="link"
+                            >
+                                <span class="bracket">[</span> GITHUB_ORG
+                                <span class="bracket">]</span>
                             </a>
-                            <a href="mailto:contact@obscure.computer" class="link">
-                                <span class="bracket">[</span> HELP_EMAIL <span class="bracket">]</span>
+                            <a
+                                href="mailto:contact@obscure.computer"
+                                class="link"
+                            >
+                                <span class="bracket">[</span> HELP_EMAIL
+                                <span class="bracket">]</span>
                             </a>
                         </div>
                     </div>

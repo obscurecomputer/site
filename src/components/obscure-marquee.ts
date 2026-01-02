@@ -21,8 +21,12 @@ export class ObscureMarquee extends LitElement {
         return html`
             <div class="marquee section">
                 <div class="track">
-                    <span class="marquee-text">MINECRAFT — KOTLIN — JAVA — DESIGN — ANDROID — WEB — </span>
-                    <span class="marquee-text">MINECRAFT — KOTLIN — JAVA — DESIGN — ANDROID — WEB — </span>
+                    <span class="marquee-text"
+                        >MINECRAFT — KOTLIN — JAVA — DESIGN — ANDROID — WEB —
+                    </span>
+                    <span class="marquee-text"
+                        >MINECRAFT — KOTLIN — JAVA — DESIGN — ANDROID — WEB —
+                    </span>
                 </div>
             </div>
         `;

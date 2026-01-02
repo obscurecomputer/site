@@ -370,14 +370,14 @@ export class ObscureApp extends LitElement {
 
         if (!dot || !outline) return;
 
-        dot.style.opacity = '0';
-        outline.style.opacity = '0';
-        document.body.style.cursor = 'none';
+        dot.style.opacity = "0";
+        outline.style.opacity = "0";
+        document.body.style.cursor = "none";
 
-        window.addEventListener('mousemove', (e) => {
-            if (this.loaded && dot.style.opacity === '0') {
-                dot.style.opacity = '1';
-                outline.style.opacity = '1';
+        window.addEventListener("mousemove", (e) => {
+            if (this.loaded && dot.style.opacity === "0") {
+                dot.style.opacity = "1";
+                outline.style.opacity = "1";
             }
             gsap.to(dot, { x: e.clientX, y: e.clientY, duration: 0 });
             gsap.to(outline, { x: e.clientX, y: e.clientY, duration: 0.15 });
