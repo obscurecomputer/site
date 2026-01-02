@@ -24,7 +24,7 @@ export class ObscureFooter extends LitElement {
                 <div class="container">
                     <div class="footer-cta">
                         <div class="fcta-small">got an idea?</div>
-                        <a href="#" class="interactable fcta-big"
+                        <a class="interactable fcta-big"
                             >keep it to yourself.</a
                         >
                     </div>
