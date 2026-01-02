@@ -13,8 +13,7 @@
  */
 
 import { LitElement, html } from "lit";
-import { customElement, property, query } from "lit/decorators.js";
-import type { Ref } from "lit/directives/ref.js";
+import { customElement, query } from "lit/decorators.js";
 import * as THREE from "three";
 
 @customElement("obscure-globe")
