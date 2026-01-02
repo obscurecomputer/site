@@ -21,18 +21,20 @@ export class ObscureDividerMarquee extends LitElement {
         return html`
             <div class="divider-marquee interactable">
                 <div class="divmar-track" id="mouseTrack">
-                    <span class="divmar-item">GIBSTEIN</span>
+                    <span class="divmar-item">KOTLIN</span>
                     <span class="divmar-item">::</span>
-                    <span class="divmar-item">CHILLSTEIN</span>
+                    <span class="divmar-item">C17</span>
                     <span class="divmar-item">::</span>
-                    <span class="divmar-item">CERQSTEIN</span>
+                    <span class="divmar-item">TYPESCRIPT</span>
                     <span class="divmar-item">::</span>
-                    <span class="divmar-item">UNIUMSTEIN</span>
+                    <span class="divmar-item">JAVA</span>
                     <span class="divmar-item">::</span>
-                    <span class="divmar-item">ERM I FORGOT</span>
+                    <span class="divmar-item">C#</span>
                     <span class="divmar-item">::</span>
-                    <span class="divmar-item">sudo rm -rf /</span>
+                    <span class="divmar-item">GO</span>
                     <span class="divmar-item">::</span>
+                    
+                    
                 </div>
             </div>
         `;

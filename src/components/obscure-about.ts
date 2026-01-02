@@ -21,11 +21,7 @@ export class ObscureAbout extends LitElement {
         return html`
             <section class="section container">
                 <p class="about morse-code" id="about-text">
-                    We make a lot of <span class="highlight">bombs</span> made
-                    with <span class="badge">U-235</span>. Did you know in just
-                    5 years we have a K/D ratio of 60.7? We died a
-                    <span class="highlight">lot</span>... because that K/D is in
-                    the <span class="badge">negatives</span>.
+                    We are a collective of <span class="badge">developers</span> and <span class="badge">designers</span> dedicated to <span class="highlight">creative experimentation</span>. From <span class="highlight">Minecraft mods</span> to <span class="highlight">Lua scripting utilities</span>, we believe in the power of <span class="highlight">open-source</span> and building awesome software for <span class="highlight">everybody</span>.
                 </p>
             </section>
         `;

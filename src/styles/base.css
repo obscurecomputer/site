@@ -102,6 +102,7 @@ body {
     pointer-events: none;
     z-index: 10000;
     mix-blend-mode: difference;
+    opacity: 0;
 }
 
 .cursor-dot {

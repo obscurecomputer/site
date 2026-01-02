@@ -31,7 +31,7 @@ export const memberData = [
         name: "chxll",
         handle: "zNotChill",
         role: "JOHN KOTLIN",
-        bio: "does somth related to minecraft mods, idk man :pensive:",
+        bio: "chxll is a developer and writes minecraft mods, lua scripting tools, and libraries.",
         img: "https://avatars.githubusercontent.com/u/59340653?v=4",
         github: "https://github.com/zNotChill",
         social: "#",
@@ -40,7 +40,7 @@ export const memberData = [
         name: "gibbie",
         handle: "gibbiemonster",
         role: "BACKEND STUFF?",
-        bio: "something related to the backend, idk what. gibstein gibstein gibstein...",
+        bio: "gibbiemonster is a developer and manages backend services for various projects, including infrastructure.",
         img: "https://avatars.githubusercontent.com/u/49456798?v=4",
         github: "https://github.com/gibbiemonster",
         social: "#",
@@ -57,8 +57,8 @@ export const memberData = [
     {
         name: "unium",
         handle: "TheUnium",
-        role: "DESIGN!!!",
-        bio: "i make website",
+        role: "DESIGN",
+        bio: "🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯🤯",
         img: "https://avatars.githubusercontent.com/u/81354905?v=4",
         github: "https://github.com/TheUnium",
         social: "#",
@@ -66,8 +66,8 @@ export const memberData = [
     {
         name: "grcq",
         handle: "grcq",
-        role: "0 IDEA",
-        bio: "honestly i dont even have a joke, i do not know what he does...",
+        role: "JVM",
+        bio: "grcq is a developer and specializes in JVM and web dev",
         img: "https://avatars.githubusercontent.com/u/66485591?v=4",
         github: "https://github.com/grcq",
         social: "#",
@@ -79,21 +79,14 @@ export const projectsData = [
         name: "TWINE",
         cat: "KOTLIN",
         year: "2025",
-        link: "https://github.com/your-org/twine",
-        active: true,
+        link: "https://github.com/obscurecomputer/twine",
+        active: true
     },
     {
         name: "PIKU",
         cat: "KOTLIN",
         year: "2025",
-        link: "https://github.com/your-org/piku",
-        active: true,
-    },
-    {
-        name: "DOT GITHUB",
-        cat: "BRAINFUCK / MAY 24 1337",
-        year: "1337",
-        link: "https://github.com/your-org/.github",
-        active: false,
-    },
+        link: "https://github.com/obscurecomputer/piku",
+        active: true
+    }
 ];

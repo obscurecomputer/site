@@ -38,8 +38,8 @@ export class ObscureFooter extends LitElement {
                     <div class="footer-bottom">
                         <div class="f-side f-left">
                             <div class="meta-row">
-                                <span class="meta-label">LOC.NET ::</span>
-                                <span class="meta-val">MUMBAI_SLUMS</span>
+                                <span class="meta-label">OBSCURE ::</span>
+                                <span class="meta-val">VERY</span>
                             </div>
                             <div class="meta-row">
                                 <span class="meta-label">IS.DOWN ::</span>
@@ -63,11 +63,8 @@ export class ObscureFooter extends LitElement {
                                     fill="transparent"
                                 />
                                 <text>
-                                    <textPath
-                                        href="#circlePath"
-                                        startOffset="0%"
-                                    >
-                                        OBSCURE COMPUTER — SINCE 2025 — wtf how
+                                    <textPath href="#circlePath" startOffset="0%">
+                                        OBSCURE COMPUTER — SINCE 2025 — 
                                     </textPath>
                                 </text>
                             </svg>
@@ -76,17 +73,14 @@ export class ObscureFooter extends LitElement {
                         </div>
 
                         <div class="f-side f-right">
-                            <a href="#" class="link">
-                                <span class="bracket">[</span> DISCORD_SV
-                                <span class="bracket">]</span>
+                            <a href="https://discord.gg/gBCR8Yr8jm" class="link">
+                                <span class="bracket">[</span> DISCORD_SV <span class="bracket">]</span>
                             </a>
-                            <a href="#" class="link">
-                                <span class="bracket">[</span> GITHUB_ORG
-                                <span class="bracket">]</span>
+                            <a href="https://github.com/obscurecomputer" class="link">
+                                <span class="bracket">[</span> GITHUB_ORG <span class="bracket">]</span>
                             </a>
-                            <a href="#" class="link">
-                                <span class="bracket">[</span> HELP_EMAIL
-                                <span class="bracket">]</span>
+                            <a href="mailto:contact@obscure.computer" class="link">
+                                <span class="bracket">[</span> HELP_EMAIL <span class="bracket">]</span>
                             </a>
                         </div>
                     </div>
