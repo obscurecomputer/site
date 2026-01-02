@@ -12,16 +12,25 @@
  * limitations under the License.
  */
 
-import { LitElement, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { LitElement, html } from "lit";
+import { customElement } from "lit/decorators.js";
 
-@customElement('obscure-about')
+@customElement("obscure-about")
 export class ObscureAbout extends LitElement {
     render() {
         return html`
             <section class="section container">
                 <p class="about morse-code" id="about-text">
-                    We are a collective of <span class="badge">developers</span> and <span class="badge">designers</span> dedicated to <span class="highlight">creative experimentation</span>. From <span class="highlight">Minecraft mods</span> to <span class="highlight">Lua scripting utilities</span>, we believe in the power of <span class="highlight">open-source</span> and building awesome software for <span class="highlight">everybody</span>.
+                    We are a collective of
+                    <span class="badge">developers</span> and
+                    <span class="badge">designers</span> dedicated to
+                    <span class="highlight">creative experimentation</span>.
+                    From <span class="highlight">Minecraft mods</span> to
+                    <span class="highlight">Lua scripting utilities</span>, we
+                    believe in the power of
+                    <span class="highlight">open-source</span> and building
+                    awesome software for
+                    <span class="highlight">everybody</span>.
                 </p>
             </section>
         `;

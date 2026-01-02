@@ -12,10 +12,10 @@
  * limitations under the License.
  */
 
-import { LitElement, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { LitElement, html } from "lit";
+import { customElement } from "lit/decorators.js";
 
-@customElement('obscure-divider-marquee')
+@customElement("obscure-divider-marquee")
 export class ObscureDividerMarquee extends LitElement {
     render() {
         return html`
@@ -33,8 +33,6 @@ export class ObscureDividerMarquee extends LitElement {
                     <span class="divmar-item">::</span>
                     <span class="divmar-item">GO</span>
                     <span class="divmar-item">::</span>
-                    
-                    
                 </div>
             </div>
         `;
@@ -45,8 +43,12 @@ export class ObscureDividerMarquee extends LitElement {
     }
 
     private _initMarquee() {
-        const track = this.renderRoot.querySelector('#mouseTrack') as HTMLElement;
-        const wrapper = this.renderRoot.querySelector('.divider-marquee') as HTMLElement;
+        const track = this.renderRoot.querySelector(
+            "#mouseTrack"
+        ) as HTMLElement;
+        const wrapper = this.renderRoot.querySelector(
+            ".divider-marquee"
+        ) as HTMLElement;
         if (!track || !wrapper) return;
 
         const content = track.innerHTML;
@@ -57,12 +59,12 @@ export class ObscureDividerMarquee extends LitElement {
         let targetSpeed = 2;
         const trackWidth = track.scrollWidth / 2;
 
-        window.addEventListener('mousemove', (e) => {
-            const centerNorm = (e.clientX / window.innerWidth) - 0.5;
+        window.addEventListener("mousemove", (e) => {
+            const centerNorm = e.clientX / window.innerWidth - 0.5;
             targetSpeed = centerNorm * 35;
         });
 
-        wrapper.addEventListener('mouseleave', () => targetSpeed = 2);
+        wrapper.addEventListener("mouseleave", () => (targetSpeed = 2));
 
         const animate = () => {
             currentSpeed += (targetSpeed - currentSpeed) * 0.05;
@@ -71,9 +73,11 @@ export class ObscureDividerMarquee extends LitElement {
             if (scrollPos <= -trackWidth) scrollPos = 0;
             if (scrollPos > 0) scrollPos = -trackWidth;
 
-            track.style.transform = `translateX(${scrollPos}px) skewX(${currentSpeed * -0.5}deg)`;
+            track.style.transform = `translateX(${scrollPos}px) skewX(${
+                currentSpeed * -0.5
+            }deg)`;
             requestAnimationFrame(animate);
-        }
+        };
         animate();
     }
 

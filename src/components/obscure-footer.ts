@@ -12,11 +12,11 @@
  * limitations under the License.
  */
 
-import { LitElement, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
-import { globe } from '../scripts/globe.ts';
+import { LitElement, html } from "lit";
+import { customElement } from "lit/decorators.js";
+import "./obscure-globe";
 
-@customElement('obscure-footer')
+@customElement("obscure-footer")
 export class ObscureFooter extends LitElement {
     render() {
         return html`
@@ -24,7 +24,9 @@ export class ObscureFooter extends LitElement {
                 <div class="container">
                     <div class="footer-cta">
                         <div class="fcta-small">got an idea?</div>
-                        <a href="#" class="interactable fcta-big">keep it to yourself.</a>
+                        <a class="interactable fcta-big"
+                            >keep it to yourself.</a
+                        >
                     </div>
                 </div>
 
@@ -41,49 +43,47 @@ export class ObscureFooter extends LitElement {
                             </div>
                             <div class="meta-row">
                                 <span class="meta-label">IS.DOWN ::</span>
-                                <span class="meta-val"><span class="status-blink">●</span> NUH_UH</span>
+                                <span class="meta-val"
+                                    ><span class="status-blink">●</span>
+                                    NUH_UH</span
+                                >
                             </div>
                             <div class="meta-row copyright-row">
-                                 <span class="meta-val">&copy; 2025 OBSCURE COMPUTER</span>
+                                <span class="meta-val"
+                                    >&copy; 2025 OBSCURE COMPUTER</span
+                                >
                             </div>
                         </div>
 
-                        <div class="f-center interactable" id="globe-trigger">
-                            <svg class="spinny-text" viewBox="0 0 100 100">
-                                <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="transparent" />
-                                <text>
-                                    <textPath href="#circlePath" startOffset="0%">
-                                        OBSCURE COMPUTER — SINCE 2025 — 
-                                    </textPath>
-                                </text>
-                            </svg>
-
-                            <div id="three-container"></div>
-                        </div>
+                        <obscure-globe></obscure-globe>
 
                         <div class="f-side f-right">
-                            <a href="https://discord.gg/gBCR8Yr8jm" class="link">
-                                <span class="bracket">[</span> DISCORD_SV <span class="bracket">]</span>
+                            <a
+                                href="https://discord.gg/gBCR8Yr8jm"
+                                class="link"
+                            >
+                                <span class="bracket">[</span> DISCORD_SV
+                                <span class="bracket">]</span>
                             </a>
-                            <a href="https://github.com/obscurecomputer" class="link">
-                                <span class="bracket">[</span> GITHUB_ORG <span class="bracket">]</span>
+                            <a
+                                href="https://github.com/obscurecomputer"
+                                class="link"
+                            >
+                                <span class="bracket">[</span> GITHUB_ORG
+                                <span class="bracket">]</span>
                             </a>
-                            <a href="mailto:contact@obscure.computer" class="link">
-                                <span class="bracket">[</span> HELP_EMAIL <span class="bracket">]</span>
+                            <a
+                                href="mailto:contact@obscure.computer"
+                                class="link"
+                            >
+                                <span class="bracket">[</span> HELP_EMAIL
+                                <span class="bracket">]</span>
                             </a>
                         </div>
                     </div>
                 </div>
             </footer>
         `;
-    }
-
-    protected firstUpdated() {
-        const container = this.renderRoot.querySelector('#three-container') as HTMLElement;
-        const trigger = this.renderRoot.querySelector('#globe-trigger') as HTMLElement;
-        if (container && trigger) {
-            globe(container, trigger);
-        }
     }
 
     createRenderRoot() {

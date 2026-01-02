@@ -12,17 +12,21 @@
  * limitations under the License.
  */
 
-import { LitElement, html } from 'lit';
-import { customElement } from 'lit/decorators.js';
+import { LitElement, html } from "lit";
+import { customElement } from "lit/decorators.js";
 
-@customElement('obscure-marquee')
+@customElement("obscure-marquee")
 export class ObscureMarquee extends LitElement {
     render() {
         return html`
             <div class="marquee section">
                 <div class="track">
-                    <span class="marquee-text">MINECRAFT — KOTLIN — JAVA — DESIGN — ANDROID — WEB — </span>
-                    <span class="marquee-text">MINECRAFT — KOTLIN — JAVA — DESIGN — ANDROID — WEB — </span>
+                    <span class="marquee-text"
+                        >MINECRAFT — KOTLIN — JAVA — DESIGN — ANDROID — WEB —
+                    </span>
+                    <span class="marquee-text"
+                        >MINECRAFT — KOTLIN — JAVA — DESIGN — ANDROID — WEB —
+                    </span>
                 </div>
             </div>
         `;
