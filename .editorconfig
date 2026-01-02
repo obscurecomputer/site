@@ -1,3 +1,5 @@
+root = true
+
 [*]
 quote_type = double
 indent_style = space

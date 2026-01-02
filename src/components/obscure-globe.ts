@@ -33,7 +33,6 @@ export class ObscureGlobe extends LitElement {
     private mouseMoveHandler?: () => void;
 
     render() {
-        console.log(this.trigger);
         return html`<div class="f-center interactable" id="globe-trigger">
             <svg class="spinny-text" viewBox="0 0 100 100">
                 <path
