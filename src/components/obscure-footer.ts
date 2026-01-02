@@ -14,7 +14,7 @@
 
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
-import { globe } from "../scripts/globe.ts";
+import "./obscure-globe";
 
 @customElement("obscure-footer")
 export class ObscureFooter extends LitElement {
@@ -55,25 +55,7 @@ export class ObscureFooter extends LitElement {
                             </div>
                         </div>
 
-                        <div class="f-center interactable" id="globe-trigger">
-                            <svg class="spinny-text" viewBox="0 0 100 100">
-                                <path
-                                    id="circlePath"
-                                    d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0"
-                                    fill="transparent"
-                                />
-                                <text>
-                                    <textPath
-                                        href="#circlePath"
-                                        startOffset="0%"
-                                    >
-                                        OBSCURE COMPUTER — SINCE 2025 —
-                                    </textPath>
-                                </text>
-                            </svg>
-
-                            <div id="three-container"></div>
-                        </div>
+                        <obscure-globe></obscure-globe>
 
                         <div class="f-side f-right">
                             <a
@@ -102,18 +84,6 @@ export class ObscureFooter extends LitElement {
                 </div>
             </footer>
         `;
-    }
-
-    protected firstUpdated() {
-        const container = this.renderRoot.querySelector(
-            "#three-container"
-        ) as HTMLElement;
-        const trigger = this.renderRoot.querySelector(
-            "#globe-trigger"
-        ) as HTMLElement;
-        if (container && trigger) {
-            globe(container, trigger);
-        }
     }
 
     createRenderRoot() {
