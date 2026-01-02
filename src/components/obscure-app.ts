@@ -28,7 +28,7 @@ import "./obscure-projects";
 import "./obscure-divider-marquee";
 import "./obscure-members";
 import "./obscure-footer";
-import { memberData } from "../scripts/stuff";
+import { memberData } from "../scripts/data";
 
 @customElement("obscure-app")
 export class ObscureApp extends LitElement {

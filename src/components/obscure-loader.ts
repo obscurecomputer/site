@@ -14,7 +14,7 @@
 
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
-import { bootMessages } from "../scripts/stuff.ts";
+import { bootMessages } from "../scripts/data.ts";
 import gsap from "gsap";
 
 @customElement("obscure-loader")

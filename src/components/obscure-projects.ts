@@ -14,7 +14,7 @@
 
 import { LitElement, html } from "lit";
 import { customElement } from "lit/decorators.js";
-import { projectsData } from "../scripts/stuff.ts";
+import { projectsData } from "../scripts/data.ts";
 
 @customElement("obscure-projects")
 export class ObscureProjects extends LitElement {
