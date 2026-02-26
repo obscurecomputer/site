@@ -12,10 +12,18 @@
  * limitations under the License.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+import { defineConfig } from "vite";
+import { resolve } from "node:path";
+import blogPlugin from "./src/plugins/vite-plugin-blog";
 
-@import "./styles/base.css";
-@import "./styles/animations.css";
-@import "./styles/components.css";
-@import "./styles/layout.css";
-@import "./styles/blog.css";
+export default defineConfig({
+    plugins: [blogPlugin()],
+    build: {
+        rollupOptions: {
+            input: {
+                main: resolve(__dirname, "index.html"),
+                blog: resolve(__dirname, "blog/index.html"),
+            },
+        },
+    },
+});

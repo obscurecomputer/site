@@ -17,6 +17,7 @@ import { customElement, state } from "lit/decorators.js";
 import Lenis from "lenis";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { initParticles, initCursor } from "../scripts/effects";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -115,29 +116,11 @@ export class ObscureApp extends LitElement {
     private _onLoaded() {
         this.loaded = true;
         this.updateComplete.then(() => {
-            this._initParticles();
+            initParticles(this.renderRoot);
             this._initAnimations();
 
             setTimeout(() => ScrollTrigger.refresh(), 100);
         });
-    }
-
-    private _initParticles() {
-        const container = this.renderRoot.querySelector("#particles");
-        if (!container) return;
-
-        const colors = ["var(--c-cyan)", "var(--c-pink)", "var(--c-yellow)"];
-
-        for (let i = 0; i < 15; i++) {
-            const p = document.createElement("div");
-            p.className = "particle";
-            p.style.left = Math.random() * 100 + "vw";
-            p.style.animationDelay = Math.random() * 15 + "s";
-            p.style.setProperty("--drift", (Math.random() - 0.5) * 100 + "px");
-            p.style.background =
-                colors[Math.floor(Math.random() * colors.length)];
-            container.appendChild(p);
-        }
     }
 
     private _initAnimations() {
@@ -228,7 +211,7 @@ export class ObscureApp extends LitElement {
 
         ScrollTrigger.refresh();
 
-        this._initCursor();
+        initCursor(this.renderRoot, "a, button, .project-item, .member-row");
         this._initMembers();
         this._initModal();
     }
@@ -359,40 +342,6 @@ export class ObscureApp extends LitElement {
             if (e.key === "Escape" && (window as any).isModalOpen) {
                 this._modalClose();
             }
-        });
-    }
-
-    private _initCursor() {
-        const dot = this.renderRoot.querySelector(".cursor-dot") as HTMLElement;
-        const outline = this.renderRoot.querySelector(
-            ".cursor-outline"
-        ) as HTMLElement;
-
-        if (!dot || !outline) return;
-
-        dot.style.opacity = "0";
-        outline.style.opacity = "0";
-        document.body.style.cursor = "none";
-
-        window.addEventListener("mousemove", (e) => {
-            if (this.loaded && dot.style.opacity === "0") {
-                dot.style.opacity = "1";
-                outline.style.opacity = "1";
-            }
-            gsap.to(dot, { x: e.clientX, y: e.clientY, duration: 0 });
-            gsap.to(outline, { x: e.clientX, y: e.clientY, duration: 0.15 });
-        });
-
-        const hoverables = this.renderRoot.querySelectorAll(
-            "a, button, .project-item, .member-row"
-        );
-        hoverables.forEach((el) => {
-            el.addEventListener("mouseenter", () =>
-                outline.classList.add("hovered")
-            );
-            el.addEventListener("mouseleave", () =>
-                outline.classList.remove("hovered")
-            );
         });
     }
 
