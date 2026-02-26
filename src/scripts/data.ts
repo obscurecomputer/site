@@ -89,4 +89,19 @@ export const projectsData = [
         link: "https://github.com/obscurecomputer/piku",
         active: true,
     },
+    {
+        name: "MANGO",
+        cat: "KOTLIN",
+        year: "2026",
+        link: "#",
+        active: true
+    },
+    {
+        name: "libcheck6",
+        cat: "KOTLIN",
+        year: "2025",
+        link: "https://github.com/obscurecomputer/libcheck6",
+        active: true
+    }
+
 ];
