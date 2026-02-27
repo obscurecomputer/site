@@ -64,6 +64,15 @@ export class ObscureApp extends LitElement {
                     <obscure-members></obscure-members>
                 </section>
 
+                <section class="blog-callout container">
+                    <div class="blog-callout-badge badge">TRANSMISSION</div>
+                    <a href="/blog" class="blog-callout-link interactable">
+                        <span class="bracket">[</span> READ_THE_BLOG
+                        <span class="bracket">]</span>
+                    </a>
+                    <p class="blog-callout-sub">dispatches from the void</p>
+                </section>
+
                 <obscure-footer></obscure-footer>
             </main>
 

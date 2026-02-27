@@ -16,6 +16,7 @@ import { LitElement, html } from "lit";
 import { customElement, property } from "lit/decorators.js";
 import { unsafeHTML } from "lit/directives/unsafe-html.js";
 import posts from "virtual:blog-posts";
+import "./obscure-code-copy";
 
 @customElement("obscure-blog-post")
 export class ObscureBlogPost extends LitElement {
@@ -38,7 +39,7 @@ export class ObscureBlogPost extends LitElement {
             return html`
                 <div class="blog-container">
                     <nav class="blog-nav">
-                        <a href="/blog/" class="blog-back-link interactable">
+                        <a href="/blog" class="blog-back-link interactable">
                             <span class="bracket">[</span> BACK
                             <span class="bracket">]</span>
                         </a>
@@ -54,7 +55,7 @@ export class ObscureBlogPost extends LitElement {
         return html`
             <div class="blog-container">
                 <nav class="blog-nav">
-                    <a href="/blog/" class="blog-back-link interactable">
+                    <a href="/blog" class="blog-back-link interactable">
                         <span class="bracket">[</span> BACK
                         <span class="bracket">]</span>
                     </a>

@@ -12,11 +12,23 @@
  * limitations under the License.
  */
 
-import { createHighlighter } from "shiki";
+import { createHighlighter, type ShikiTransformer } from "shiki";
 import type { MarkedExtension } from "marked";
 
+const lineNumbers: ShikiTransformer = {
+    name: "line-numbers",
+    line(node, line) {
+        node.children.unshift({
+            type: "element",
+            tagName: "span",
+            properties: { class: "line-number" },
+            children: [{ type: "text", value: String(line) }],
+        });
+    },
+};
+
 const highlighter = await createHighlighter({
-    themes: ["vitesse-dark"],
+    themes: ["synthwave-84"],
     langs: [
         "kotlin",
         "yaml",
@@ -40,19 +52,21 @@ export const highlightExtension: MarkedExtension = {
             try {
                 html = highlighter.codeToHtml(text, {
                     lang: label,
-                    theme: "vitesse-dark",
+                    theme: "synthwave-84",
+                    transformers: [lineNumbers],
                 });
             } catch {
                 html = highlighter.codeToHtml(text, {
                     lang: "text",
-                    theme: "vitesse-dark",
+                    theme: "synthwave-84",
+                    transformers: [lineNumbers],
                 });
             }
             html = html.replace(
                 /^<pre /,
                 `<pre data-lang="${label}" `
             );
-            return `<div class="code-block">${html}<button class="code-copy" type="button"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg></button></div>`;
+            return `<div class="code-block">${html}<obscure-code-copy></obscure-code-copy></div>`;
         },
     },
 };

@@ -40,7 +40,7 @@ export class ObscureBlogList extends LitElement {
                     ${posts.map(
                         (post) => html`
                             <a
-                                href="#${post.slug}"
+                                href="/blog/${post.slug}"
                                 class="blog-post-card interactable"
                             >
                                 <div class="blog-post-card-content">

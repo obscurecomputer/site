@@ -79,6 +79,13 @@ export class ObscureFooter extends LitElement {
                                 <span class="bracket">[</span> HELP_EMAIL
                                 <span class="bracket">]</span>
                             </a>
+                            <a
+                                href="/blog"
+                                class="link"
+                            >
+                                <span class="bracket">[</span> BLOG
+                                <span class="bracket">]</span>
+                            </a>
                         </div>
                     </div>
                 </div>

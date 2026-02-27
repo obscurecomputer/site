@@ -249,9 +249,10 @@
 /* Blog Article Body Typography */
 .blog-article-body {
     font-family: var(--font-mono);
-    font-size: 1.2rem;
-    line-height: 1.7;
+    font-size: 1.35rem;
+    line-height: 1.5;
     color: var(--c-white);
+    letter-spacing: 0.3px;
 }
 
 .blog-article-body h2 {
@@ -328,8 +329,8 @@
     margin: 1.5rem 0;
     overflow-x: auto;
     position: relative;
+    animation: none !important;
 }
-
 .blog-article-body pre::before,
 .blog-article-body .shiki::before {
     content: "";
@@ -349,14 +350,22 @@
     font-size: 1rem;
     color: var(--c-white);
     line-height: 1.6;
+    counter-reset: line;
 }
 
 .blog-article-body .shiki code span {
     font-family: var(--font-mono);
 }
 
-.code-block {
-    position: relative;
+.blog-article-body .shiki code .line-number {
+    display: inline-block;
+    width: 2.5em;
+    margin-right: 1em;
+    text-align: right;
+    color: #444;
+    user-select: none;
+    font-family: var(--font-mono);
+    font-size: 0.85em;
 }
 
 .code-copy {
@@ -375,6 +384,11 @@
 }
 
 .code-copy:hover {
+    color: var(--c-cyan);
+    border-color: var(--c-cyan);
+}
+
+.code-copy-ok {
     color: var(--c-cyan);
     border-color: var(--c-cyan);
 }

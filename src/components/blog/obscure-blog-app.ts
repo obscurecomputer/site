@@ -13,7 +13,7 @@
  */
 
 import { LitElement, html } from "lit";
-import { customElement, state } from "lit/decorators.js";
+import { customElement, property } from "lit/decorators.js";
 import { initParticles, initCursor } from "../../scripts/effects";
 
 import "./obscure-blog-list";
@@ -21,24 +21,8 @@ import "./obscure-blog-post";
 
 @customElement("obscure-blog-app")
 export class ObscureBlogApp extends LitElement {
-    @state()
-    private _slug = "";
-
-    connectedCallback() {
-        super.connectedCallback();
-        this._slug = location.hash.slice(1);
-        window.addEventListener("hashchange", this._onHashChange);
-    }
-
-    disconnectedCallback() {
-        super.disconnectedCallback();
-        window.removeEventListener("hashchange", this._onHashChange);
-    }
-
-    private _onHashChange = () => {
-        this._slug = location.hash.slice(1);
-        window.scrollTo(0, 0);
-    };
+    @property()
+    slug = "";
 
     render() {
         return html`
@@ -49,9 +33,9 @@ export class ObscureBlogApp extends LitElement {
             <div class="cursor-outline"></div>
 
             <main class="blog-main">
-                ${this._slug
+                ${this.slug
                     ? html`<obscure-blog-post
-                          .slug=${this._slug}
+                          .slug=${this.slug}
                       ></obscure-blog-post>`
                     : html`<obscure-blog-list></obscure-blog-list>`}
             </main>
