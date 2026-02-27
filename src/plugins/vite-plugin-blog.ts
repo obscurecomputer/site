@@ -71,6 +71,74 @@ function getAllPosts(): PostFull[] {
         .sort((a: PostFull, b: PostFull) => (a.date > b.date ? -1 : 1));
 }
 
+const SITE_URL = "https://obscure.computer";
+
+function replaceMetaTag(
+    html: string,
+    attr: string,
+    attrValue: string,
+    newContent: string,
+): string {
+    const re = new RegExp(
+        `(<meta\\s[^>]*${attr}=["']${attrValue}["'][^>]*content=["'])([^"']*)(["'])`,
+        "i",
+    );
+    const reAlt = new RegExp(
+        `(<meta\\s[^>]*content=["'])([^"']*)(["'][^>]*${attr}=["']${attrValue}["'])`,
+        "i",
+    );
+    if (re.test(html)) return html.replace(re, `$1${newContent}$3`);
+    if (reAlt.test(html)) return html.replace(reAlt, `$1${newContent}$3`);
+    return html;
+}
+
+function injectPostMeta(html: string, post: PostMeta): string {
+    const title = `${post.title} | obscure computer`;
+    const url = `${SITE_URL}/blog/${post.slug}`;
+
+    let out = html.replace(
+        /<title>[^<]*<\/title>/,
+        `<title>${title}</title>`,
+    );
+    out = replaceMetaTag(out, "name", "description", post.description);
+    out = replaceMetaTag(out, "property", "og:title", title);
+    out = replaceMetaTag(out, "property", "og:description", post.description);
+    out = replaceMetaTag(out, "property", "og:url", url);
+    out = replaceMetaTag(out, "property", "og:type", "article");
+    out = replaceMetaTag(out, "property", "twitter:title", title);
+    out = replaceMetaTag(out, "property", "twitter:description", post.description);
+    out = out.replace(
+        /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/,
+        `<link rel="canonical" href="${url}" />`,
+    );
+
+    return out;
+}
+
+function injectBlogListingMeta(html: string): string {
+    const title = "blog | obscure computer";
+    const description =
+        "Latest posts from the obscure computer collective.";
+    const url = `${SITE_URL}/blog`;
+
+    let out = html.replace(
+        /<title>[^<]*<\/title>/,
+        `<title>${title}</title>`,
+    );
+    out = replaceMetaTag(out, "name", "description", description);
+    out = replaceMetaTag(out, "property", "og:title", title);
+    out = replaceMetaTag(out, "property", "og:description", description);
+    out = replaceMetaTag(out, "property", "og:url", url);
+    out = replaceMetaTag(out, "property", "twitter:title", title);
+    out = replaceMetaTag(out, "property", "twitter:description", description);
+    out = out.replace(
+        /<link\s+rel="canonical"\s+href="[^"]*"\s*\/?>/,
+        `<link rel="canonical" href="${url}" />`,
+    );
+
+    return out;
+}
+
 export default function blogPlugin(): Plugin {
     return {
         name: "vite-plugin-blog",
@@ -87,6 +155,33 @@ export default function blogPlugin(): Plugin {
             }
 
             return null;
+        },
+
+        closeBundle() {
+            const distDir = path.resolve("dist");
+            const indexPath = path.join(distDir, "index.html");
+            if (!fs.existsSync(indexPath)) return;
+
+            const template = fs.readFileSync(indexPath, "utf-8");
+            const posts = getAllPosts();
+
+            // Generate per-post HTML files
+            for (const post of posts) {
+                const postDir = path.join(distDir, "blog", post.slug);
+                fs.mkdirSync(postDir, { recursive: true });
+                fs.writeFileSync(
+                    path.join(postDir, "index.html"),
+                    injectPostMeta(template, post),
+                );
+            }
+
+            // Generate blog listing HTML
+            const blogDir = path.join(distDir, "blog");
+            fs.mkdirSync(blogDir, { recursive: true });
+            fs.writeFileSync(
+                path.join(blogDir, "index.html"),
+                injectBlogListingMeta(template),
+            );
         },
 
         configureServer(server) {
