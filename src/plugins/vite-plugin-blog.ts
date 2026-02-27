@@ -165,19 +165,19 @@ export default function blogPlugin(): Plugin {
             const template = fs.readFileSync(indexPath, "utf-8");
             const posts = getAllPosts();
 
-            // Generate per-post HTML files
+            const blogDir = path.join(distDir, "blog");
+            fs.mkdirSync(blogDir, { recursive: true });
+
+            // Generate per-post HTML files as blog/<slug>.html so
+            // Cloudflare Pages serves them directly without a trailing-slash redirect
             for (const post of posts) {
-                const postDir = path.join(distDir, "blog", post.slug);
-                fs.mkdirSync(postDir, { recursive: true });
                 fs.writeFileSync(
-                    path.join(postDir, "index.html"),
+                    path.join(blogDir, `${post.slug}.html`),
                     injectPostMeta(template, post),
                 );
             }
 
             // Generate blog listing HTML
-            const blogDir = path.join(distDir, "blog");
-            fs.mkdirSync(blogDir, { recursive: true });
             fs.writeFileSync(
                 path.join(blogDir, "index.html"),
                 injectBlogListingMeta(template),
