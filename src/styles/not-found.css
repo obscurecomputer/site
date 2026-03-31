@@ -1,0 +1,128 @@
+/*
+ * Copyright (c) Obscure Computer 2026. Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+
+.not-found {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    padding: 2rem;
+}
+
+.not-found-code {
+    font-family: var(--font-display);
+    font-size: clamp(6rem, 15vw, 20rem);
+    line-height: 1;
+    text-transform: uppercase;
+    font-weight: 400;
+    position: relative;
+    color: var(--c-white);
+    margin-bottom: 4rem;
+}
+.not-found-code::before,
+.not-found-code::after {
+    content: "404";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+.not-found-code::before {
+    animation: glitch1 0.3s infinite;
+    color: var(--c-pink);
+    z-index: -1;
+}
+.not-found-code::after {
+    animation: glitch2 0.3s infinite;
+    color: var(--c-cyan);
+    z-index: -2;
+}
+
+.not-found-terminal {
+    font-family: var(--font-mono);
+    font-size: clamp(1rem, 2vw, 1.4rem);
+    color: #666;
+    text-align: left;
+    max-width: 600px;
+    width: 100%;
+    margin-bottom: 3rem;
+}
+
+.not-found-line {
+    opacity: 0;
+    transform: translateY(10px);
+    padding: 0.2em 0;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.not-found-line .prompt {
+    color: var(--c-cyan);
+}
+.not-found-line .err {
+    color: var(--c-pink);
+}
+.not-found-line .addr {
+    color: var(--c-yellow);
+}
+
+.not-found-cursor {
+    display: inline-block;
+    width: 0.6em;
+    height: 1.2em;
+    background: var(--c-cyan);
+    vertical-align: middle;
+    margin-left: 2px;
+    animation: blink 0.8s infinite steps(2);
+}
+
+.not-found-link {
+    font-family: var(--font-mono);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--c-white);
+    padding: 0.5rem 1rem;
+    border: 1px solid #333;
+    transition: all 0.2s var(--easing);
+    display: inline-block;
+}
+.not-found-link .bracket {
+    color: var(--c-cyan);
+    opacity: 0.5;
+    transition: opacity 0.2s;
+}
+.not-found-link:hover {
+    border-color: var(--c-cyan);
+    color: var(--c-cyan);
+    text-shadow: 0 0 10px rgba(0, 255, 208, 0.5);
+    box-shadow: 0 0 20px rgba(0, 255, 208, 0.15);
+}
+.not-found-link:hover .bracket {
+    opacity: 1;
+}
+
+@media (max-width: 768px) {
+    .not-found-code {
+        margin-bottom: 2rem;
+    }
+    .not-found-terminal {
+        font-size: 0.9rem;
+    }
+    .not-found-line {
+        white-space: normal;
+    }
+}

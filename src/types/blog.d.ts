@@ -12,11 +12,20 @@
  * limitations under the License.
  */
 
-@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&family=VT323&display=swap");
+interface BlogPostMeta {
+    slug: string;
+    title: string;
+    date: string;
+    description: string;
+    tags: string[];
+    author: string;
+}
 
-@import "./styles/base.css";
-@import "./styles/animations.css";
-@import "./styles/components.css";
-@import "./styles/layout.css";
-@import "./styles/blog.css";
-@import "./styles/not-found.css";
+interface BlogPostFull extends BlogPostMeta {
+    html: string;
+}
+
+declare module "virtual:blog-posts" {
+    const posts: BlogPostFull[];
+    export default posts;
+}
